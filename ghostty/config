@@ -1,0 +1,2 @@
+custom-shader = shaders/cursor_smear.glsl
+
