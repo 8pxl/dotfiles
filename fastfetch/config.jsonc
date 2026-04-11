@@ -1,0 +1,129 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "type": "small",
+        "padding": {
+            "top": 4
+    }
+    },
+    "display": {
+        "separator": "->   ",
+        "color": {
+            "separator": "1" // Bold
+        },
+        "constants": [
+            "──────"
+        ],
+        "key": {
+            "type": "both",
+            "paddingLeft": 3
+        }
+    },
+    "modules": [
+        {
+            "type": "title",
+            "format": "               @{host-name-colored}"
+        },
+        "break",
+        {
+            "type": "custom",
+            "format": "┌{$1} {#1}system information {$1}┐"
+        },
+        "break",
+        {
+            "key": "os        ",
+            "keyColor": "red",
+      "format": "{name} {version}",
+            "type": "os"
+        },
+        {
+            "key": "machine   ",
+            "keyColor": "yellow",
+      "format": "macbook pro",
+      "keyIcon": "󰌢",
+            "type": "custom"
+        },
+        {
+            "key": "uptime    ",
+            "keyColor": "green",
+            "type": "uptime",
+      "format": "{days} days"
+        },
+        {
+            "key": "wm        ",
+            "keyColor": "blue",
+      "format": "aerospace",
+            "type": "custom",
+      "keyIcon": "",
+        },
+        // {
+        //     "key": "DE           ",
+        //     "keyColor": "green",
+        //     "type": "de"
+        // },
+        // {
+        //     "key": "Shell        ",
+        //     "keyColor": "cyan",
+        //     "type": "shell"
+        // },
+        {
+            "key": "terminal  ",
+            "keyColor": "magenta",
+            "type": "terminal",
+      "format": "{exe-name}"
+        },
+      {
+          "key": "cpu       ",
+          "keyColor": "cyan",
+          "type": "cpu",
+       "format": "m2 pro"
+      },
+    {
+      "key": "date      ",
+      "keyColor": "yellow",
+      "type": "datetime",
+      "format": "{month}/{day-in-month}/{year-short}",
+    },
+    //     {
+    //   "key": "now playing  ",
+    //   "keyColor": "red",
+    //   "type": "media",
+    //   "format": "{title} - {artist}"
+    //
+    //   // "format": "{media}"
+    // },
+        // {
+        //     "key": "GPU          ",
+        //     "keyColor": "blue",
+        //     "type": "gpu"
+        // },
+        // {
+        //     "key": "Memory       ",
+        //     "keyColor": "magenta",
+        //     "type": "memory"
+        // },
+        // {
+        //     "key": "Local IP     ",
+        //     "keyColor": "red",
+        //     "type": "localip",
+        //     "compact": true
+        // },
+        // {
+        //     "key": "Public IP    ",
+        //     "keyColor": "cyan",
+        //     "type": "publicip",
+        //     "timeout": 1000
+        // },
+        "break",
+        {
+            "type": "custom",
+            "format": "└{$1}────────────────────{$1}┘"
+        },
+        "break",
+        {
+            "type": "colors",
+            "paddingLeft": 11,
+            "symbol": "square"
+        }
+    ]
+}
