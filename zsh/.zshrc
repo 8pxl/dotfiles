@@ -167,8 +167,6 @@ EOF
   GH_DEBUG="$GH_DEBUG" GH_HOST="$GH_HOST" gh copilot explain "$@"
 }
 export MANPATH="$HOME/.local/share/man:$MANPATH"
-export OPENROUTER_API_KEY=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
-export GEMINI_API_KEY=AIzaSyCoksmWvvagNn8uCgaKUdnKIcbiIZXLrog
 export RIPGREP_CONFIG_PATH="/Users/keijayhuang/.config/ripgrep/ripgreprc"
 
 alias fetch="fastfetch"
