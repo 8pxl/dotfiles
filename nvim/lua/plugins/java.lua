@@ -14,7 +14,7 @@ return {
     "mfussenegger/nvim-jdtls",
     ft = "java",
     dependencies = {
-      "williamboman/mason.nvim",
+      "mason-org/mason.nvim",
     },
     config = function()
       local jdtls = require("jdtls")

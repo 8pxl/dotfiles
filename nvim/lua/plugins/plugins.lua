@@ -43,21 +43,24 @@ return {
   {
     "nvim-neorg/neorg",
     lazy = false,
+    -- dependencies = { "nvim-lua/plenary.nvim" },
     -- version = "false",
-    opts = {
-      load = {
-        ["core.defaults"] = {},
-        ["core.concealer"] = {},
-        -- ["core.dirman"] = {
-        --   config = {
-        --     workspaces = {
-        --       notes = "~/notes",
-        --     },
-        --     default_workspace = "notes",
-        --   },
-        -- },
-      },
-    },
+    version = "*",
+    config = true,
+    -- opts = {
+    --   load = {
+    --     ["core.defaults"] = {},
+    --     ["core.concealer"] = {},
+    --     -- ["core.dirman"] = {
+    --     --   config = {
+    --     --     workspaces = {
+    --     --       notes = "~/notes",
+    --     --     },
+    --     --     default_workspace = "notes",
+    --     --   },
+    --     -- },
+    --   },
+    -- },
   },
   { "akinsho/git-conflict.nvim", version = "*", config = true },
   -- {
