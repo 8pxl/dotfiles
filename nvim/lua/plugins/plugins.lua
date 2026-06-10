@@ -15,6 +15,9 @@ return {
     },
   },
   {
+    "dhruvasagar/vim-table-mode",
+  },
+  {
     "chomosuke/typst-preview.nvim",
     lazy = false, -- or ft = 'typst'
     version = "1.*",
@@ -46,22 +49,78 @@ return {
     -- dependencies = { "nvim-lua/plenary.nvim" },
     -- version = "false",
     version = "*",
+    dependencies = {
+      -- Work around a lazy.nvim load-order/runtimepath issue where Neorg
+      -- can't see the compiled parsers from the luarocks install.
+      "nvim-neorg/tree-sitter-norg",
+      "nvim-neorg/tree-sitter-norg-meta",
+    },
+    init = function()
+      local data = vim.fn.stdpath("data")
+
+      local function maybe_prepend(dir)
+        if (vim.uv or vim.loop).fs_stat(dir) then
+          vim.opt.rtp:prepend(dir)
+        end
+      end
+
+      -- Make `parser/norg(.so)` discoverable via runtimepath.
+      maybe_prepend(data .. "/lazy-rocks/tree-sitter-norg/lib/lua/5.1")
+      maybe_prepend(data .. "/lazy-rocks/tree-sitter-norg-meta/lib/lua/5.1")
+    end,
     config = true,
-    -- opts = {
-    --   load = {
-    --     ["core.defaults"] = {},
-    --     ["core.concealer"] = {},
-    --     -- ["core.dirman"] = {
-    --     --   config = {
-    --     --     workspaces = {
-    --     --       notes = "~/notes",
-    --     --     },
-    --     --     default_workspace = "notes",
-    --     --   },
-    --     -- },
-    --   },
-    -- },
+    opts = {
+      load = {
+        ["core.defaults"] = {},
+        ["core.concealer"] = {},
+        ["core.dirman"] = {
+          config = {
+            workspaces = {
+              notes = "~/notes",
+            },
+            default_workspace = "notes",
+          },
+        },
+        ["core.keybinds"] = {},
+        ["core.highlights"] = {
+          config = {
+            highlights = {
+              links = {
+                file = {
+                  [""] = "+@markup.link.url",
+                },
+                description = {
+                  [""] = "+@markup.link.url",
+                },
+                location = {
+                  generic = {
+                    [""] = "+@markup.link.url",
+                    prefix = "+@markup.link.url",
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+    keys = {
+      { "<leader>N", "<Plug>(neorg.dirman.new-note)", desc = "Neorg: New Note", ft = "norg" },
+      { "<C-a>", "<Plug>(neorg.qol.todo-items.todo.task-cycle)", desc = "Neorg: Toggle Todo", ft = "norg" },
+    },
   },
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    -- Optional: See `:h nvim-surround.configuration` and `:h nvim-surround.setup` for details
+    -- config = function()
+    --     require("nvim-surround").setup({
+    --         -- Put your configuration here
+    --     })
+    -- end
+  },
+
   { "akinsho/git-conflict.nvim", version = "*", config = true },
   -- {
   --   "ahkohd/difft.nvim",

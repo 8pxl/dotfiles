@@ -1,2 +1,56 @@
-custom-shader = shaders/cursor_smear.glsl
+theme = Rose Pine Moon 
+background-blur = macos-glass-clear
+background-opacity = 0.85
+#background-blur = 1
+#font-family = Monocraft Nerd Font
+#font-family = Monocraft Nerd Font
+font-family = Cartograph CF
+#font-family = Times New Roman
+#font-family = space mono
+#font-style = bold
+#font-thicken = true
+font-thicken-strength = 0
+auto-update-channel = tip
+# background-opacity = 0.75
+# title = "<3"
+window-title-font-family="Monocraft Nerd Font"
+#window-title-font-family= Cartograph CF
+macos-icon = glass
+bold-is-bright = true
+cursor-color = "#FFC5DC"
+focus-follows-mouse=true
+cursor-style = bar
+shell-integration-features = no-cursor
 
+notify-on-command-finish = unfocused
+notify-on-command-finish-action = notify
+notify-on-command-finish-after = 3s
+
+keybind = ctrl+h=goto_split:previous
+keybind = ctrl+l=goto_split:next
+
+custom-shader = "/Users/keijayhuang/.config/ghostty/shaders/cursor_smear.glsl"
+# custom-shader = ""
+# custom-shader = "/Users/keijayhuang/.config/ghostty/shaders/manga_slash.glsl"
+# custom-shader = "/Users/keijayhuang/.config/ghostty/shaders/cursor_blaze.glsl"
+# custom-shader = "/Users/keijayhuang/.config/ghostty/shaders/cursor_blaze_no_trail.glsl"
+# custom-shader = "/Users/keijayhuang/.config/ghostty/shaders/cursor_blaze_tapered.glsl"
+#custom-shader = "/Users/keijayhuang/.config/ghostty/shaders/cursor_frozen.glsl"
+# custom-shader = "/Users/keijayhuang/.config/ghostty/shaders/cursor_smear_fade.glsl"
+# custom-shader = "/Users/keijayhuang/.config/ghostty/shaders/debug_cursor_animated.glsl"
+# custom-shader = "/Users/keijayhuang/.config/ghostty/shaders/glitchy.glsl"
+# custom-shader = "/Users/keijayhuang/.config/ghostty/shaders/just-snow.glsl"
+#custom-shader = "/Users/keijayhuang/.config/ghostty/shaders/water.glsl"
+#custom-shader = "/Users/keijayhuang/.config/ghostty/shaders/bloom.glsl"
+# custom-shader = "/Users/keijayhuang/.config/ghostty/shaders/starfield.glsl"
+#custom-shader = "/Users/keijayhuang/.config/ghostty/shaders/starfield-colors.glsl"
+# custom-shader = "/Users/keijayhuang/.config/ghostty/shaders/cineShader-Lava.glsl"
+# custom-shader = "/Users/keijayhuang/.config/ghostty/shaders/drunkard.glsl"
+# custom-shader = "/Users/keijayhuang/.config/ghostty/shaders/inside-the-matrix.glsl"
+# custom-shader = "/Users/keijayhuang/.config/ghostty/shaders/glow.glsl"
+# custom-shader = "/Users/keijayhuang/.config/ghostty/shaders/crt.glsl"
+# custom-shader = "/Users/keijayhuang/.config/ghostty/shaders/flicker.glsl"
+# custom-shader = "/Users/keijayhuang/.config/ghostty/shaders/old-film.glsl"
+# custom-shader = "/Users/keijayhuang/.config/ghostty/shaders/"
+# custom-shader = "/Users/keijayhuang/.config/ghostty/shaders/"
+# custom-shader = "/Users/keijayhuang/.config/ghostty/shaders/"

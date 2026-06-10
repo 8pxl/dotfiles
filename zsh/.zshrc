@@ -1,3 +1,5 @@
+ulimit -n 10240
+
 # Homebrew environment
 if [ -e /opt/homebrew/bin/brew ]; then
   eval "$(${HOMEBREW_PREFIX:-/opt/homebrew}/bin/brew shellenv)"
@@ -176,6 +178,7 @@ alias p3="python3"
 alias ls="lsd"
 alias venv="source .venv/bin/activate"
 alias weather="curl wttr.in"
+alias ccusage="bunx ccusage"
 
 
 # Added by Antigravity

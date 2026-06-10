@@ -63,7 +63,7 @@ inner.horizontal = 10
 inner.vertical =   10
 outer.left =       10
 outer.bottom =     10
-outer.top =        15
+outer.top =        [{monitor.main = 15}, {monitor.secondary = 45}, {monitor.1 = 30}, 15]
 outer.right =      10
 
 # 'main' binding mode declaration
@@ -158,8 +158,8 @@ alt-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
 alt-shift-2 = 'move-node-to-workspace 2 --focus-follows-window'
 alt-shift-3 = 'move-node-to-workspace 3 --focus-follows-window'
 alt-shift-4 = 'move-node-to-workspace 4 --focus-follows-window'
-# alt-shift-5 = 'move-node-to-workspace 5 --focus-follows-window'
-# alt-shift-6 = 'move-node-to-workspace 6 --focus-follows-window'
+alt-shift-5 = 'move-node-to-workspace 5 --focus-follows-window'
+alt-shift-6 = 'move-node-to-workspace 6 --focus-follows-window'
 # alt-shift-7 = 'move-node-to-workspace 7 --focus-follows-window'
 # alt-shift-8 = 'move-node-to-workspace 8 --focus-follows-window'
 # alt-shift-9 = 'move-node-to-workspace 9 --focus-follows-window'

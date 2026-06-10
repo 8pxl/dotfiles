@@ -4,6 +4,7 @@
 
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.breakindent = true
 
 -- This will be applied after the colorscheme loads
 vim.api.nvim_create_autocmd("ColorScheme", {
