@@ -39,15 +39,14 @@
         {
             "key": "machine   ",
             "keyColor": "yellow",
-      "format": "macbook pro",
-      "keyIcon": "󰌢",
-            "type": "custom"
+      "format": "lua:local result = ...; return string.lower(result.name)",
+            "type": "host"
         },
         {
             "key": "uptime    ",
             "keyColor": "green",
             "type": "uptime",
-      "format": "{days} days"
+      "format": "{days}d {hours}h {minutes}m"
         },
         {
             "key": "wm        ",
@@ -76,7 +75,7 @@
           "key": "cpu       ",
           "keyColor": "cyan",
           "type": "cpu",
-       "format": "m2 pro"
+       "format": "lua:local result = ...; return string.lower(result.name)"
       },
     {
       "key": "date      ",
