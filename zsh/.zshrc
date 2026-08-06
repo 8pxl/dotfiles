@@ -172,6 +172,7 @@ export MANPATH="$HOME/.local/share/man:$MANPATH"
 export RIPGREP_CONFIG_PATH="/Users/keijayhuang/.config/ripgrep/ripgreprc"
 
 alias fetch="fastfetch"
+codex codex="codex --yolo"
 alias lg="lazygit -ucd ~/.config/lazygit"
 alias nv="nvim"
 alias p3="python3"
