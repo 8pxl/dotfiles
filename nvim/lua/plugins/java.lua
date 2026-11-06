@@ -23,9 +23,11 @@ return {
       local workspace_dir = home .. "/.local/share/jdtls/workspace/" .. project_name
 
       -- Find jdtls installation via Mason
-      local mason_registry = require("mason-registry")
-      local jdtls_package = mason_registry.get_package("jdtls")
-      local jdtls_path = jdtls_package:get_install_path()
+      -- (mason 2.x removed Package:get_install_path(); use $MASON instead)
+      local jdtls_path = vim.fn.expand("$MASON/packages/jdtls")
+      local os_config = vim.fn.has("mac") == 1 and "config_mac"
+        or vim.fn.has("win32") == 1 and "config_win"
+        or "config_linux"
 
       -- Path to your formatter configuration
       local formatter_config = vim.fn.getcwd() .. "/eclipse-java-formatter.xml"
@@ -52,7 +54,7 @@ return {
           "-jar",
           vim.fn.glob(jdtls_path .. "/plugins/org.eclipse.equinox.launcher_*.jar"),
           "-configuration",
-          jdtls_path .. "/config_mac", -- Use config_linux on Linux, config_mac on macOS, config_win on Windows
+          jdtls_path .. "/" .. os_config,
           "-data",
           workspace_dir,
         },
@@ -108,7 +110,7 @@ return {
         },
         on_attach = function(client, bufnr)
           -- Enable completion triggered by <c-x><c-o>
-          vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+          vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
 
           -- Mappings
           local bufopts = { noremap = true, silent = true, buffer = bufnr }
